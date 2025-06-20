@@ -1,6 +1,6 @@
 name: Neuer Blogeintrag
 description: Einen neuen Blog-Artikel anlegen
-title: "[Blog]: "
+title: "[Blog]: Neuer Blogeintrag"
 labels: ["blog"]
 projects: ["ktt-ol/www"]
 assignees:
@@ -9,7 +9,37 @@ body:
   - type: markdown
     attributes:
       value: |
-        Danke, dass du einen neuen Blogeintrag schreibst!
+        Danke, dass du einen neuen Blogeintrag schreibst! Bitte halte dich beim Schreiben von Blogeinträgen an [diese Regeln](./README.md).
+  - type: dropdown
+    id: type
+    attributes:
+      label: Blogeintrag-Typ
+      description: Um welche Art von Blogeintrag handelt es sich?
+      options:
+        - Ankündigung
+        - Event
+        - Hardware
+        - Infrastruktur
+        - Software
+        - Talk
+      default: 1
+    validations:
+      required: true
+  - type: dropdown
+    id: series
+    attributes:
+      label: Zu welcher Serie gehört der Blogeintrag?
+      options:
+        - Camp
+        - CoderDojo
+        - Congress
+        - Eingelogged
+        - Ferienpass
+        - LAN Party
+        - News
+        - Projekt
+        - Andere
+      default: 8
   - type: input
     id: article-title
     attributes:
@@ -27,45 +57,15 @@ body:
     attributes:
       label: Inhalt des Artikels
       description: Was war los, wer war dabei, welche tollen Fotos gab es?
-      placeholder: Erzähl uns was du gesehen hast!
-      value: "Ein Event hat stattgefunden"
+      placeholder: "Erzähl uns was du gesehen hast! Du kannst per copy/paste oder drag&drop Bilder hinzufügen. Formattierung mit markdown, zum Beispiel für Überschriften, ist ebenfalls möglich."
     validations:
       required: true
-  - type: dropdown
-    id: type
-    attributes:
-      label: Blogeintrag-Typ
-      description: Um welche Art von Blogeintrag handelt es sich?
-      options:
-        - Ankündigung
-        - Event
-        - Hardware
-        - Infrastruktur
-        - Software
-        - Talk
-      default: Event
-    validations:
-      required: true
-  - type: dropdown
-    id: series
-    attributes:
-      label: Zu welcher Serie gehört der Blogeintrag?
-      options:
-        - Camp
-        - CoderDojo
-        - Congress
-        - Eingelogged
-        - Ferienpass
-        - LAN Party
-        - News
-        - Projekt
-        - Andere
-      default: Andere
   - type: textarea
-    id: further information
+    id: further-information
     attributes:
       label: Weitere Informationen
-      description: Irgendwelche weiteren Informationen in Bezug auf deinen neuen Blog-Artikel?
+      description: Irgendwelche weiteren Informationen in Bezug auf deinen neuen Blog-Artikel?, die nicht im Text stehen sollen?
+      placeholder: "Kommentar"
   - type: checkboxes
     id: terms
     attributes:
