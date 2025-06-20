@@ -1,0 +1,76 @@
+name: Neuer Blogeintrag
+description: Einen neuen Blog-Artikel anlegen
+title: "[Blog]: "
+labels: ["blog"]
+projects: ["ktt-ol/www"]
+assignees:
+  - tljuniper
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke, dass du einen neuen Blogeintrag schreibst!
+  - type: input
+    id: article-title
+    attributes:
+      label: Titel des Artikels
+      description: Kurze und knappe Beschreibung des Events
+    validations:
+      required: true
+  - type: input
+    id: article-author
+    attributes:
+      label: Autor des Artikels
+      description: Wer hat den Artikel geschrieben?
+  - type: textarea
+    id: article-content
+    attributes:
+      label: Inhalt des Artikels
+      description: Was war los, wer war dabei, welche tollen Fotos gab es?
+      placeholder: Erzähl uns was du gesehen hast!
+      value: "Ein Event hat stattgefunden"
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Blogeintrag-Typ
+      description: Um welche Art von Blogeintrag handelt es sich?
+      options:
+        - Ankündigung
+        - Event
+        - Hardware
+        - Infrastruktur
+        - Software
+        - Talk
+      default: Event
+    validations:
+      required: true
+  - type: dropdown
+    id: series
+    attributes:
+      label: Zu welcher Serie gehört der Blogeintrag?
+      options:
+        - Camp
+        - CoderDojo
+        - Congress
+        - Eingelogged
+        - Ferienpass
+        - LAN Party
+        - News
+        - Projekt
+        - Andere
+      default: Andere
+  - type: textarea
+    id: further information
+    attributes:
+      label: Weitere Informationen
+      description: Irgendwelche weiteren Informationen in Bezug auf deinen neuen Blog-Artikel?
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: Indem du diesen Artikel abschickst, stimmst du zu dich an unseren [Code of Conduct](https://example.com) zu halten.
+      options:
+        - label: Ich habe den Code of Conduct gelesen.
+          required: true
