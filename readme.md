@@ -11,6 +11,7 @@
 - Write more about Do's & Don't in the space (at about/about.md)
 - Write more about self-organised groups and how we make decisions
 - Move space status to top on mobile
+- Test codeowners setup
 
 ## Development
 
